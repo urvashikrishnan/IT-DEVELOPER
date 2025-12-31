@@ -1,1 +1,18 @@
+<h2>My Tasks</h2>
 
+<form method="post">
+  <input name="task" placeholder="New task">
+  <button type="submit">Add</button>
+</form>
+
+<ul>
+{% for task in tasks %}
+  <li>
+    {{ task[2] }} - {{ task[3] }}
+    <a href="/complete/{{ task[0] }}">✔</a>
+    <a href="/delete/{{ task[0] }}">❌</a>
+  </li>
+{% endfor %}
+</ul>
+
+<a href="/logout">Logout</a>
